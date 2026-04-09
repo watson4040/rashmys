@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rashmy's Food | Delicious Meals in Lusaka</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fef8f0;
+            color: #2d2d2d;
+            scroll-padding-top: 80px;
+        }
+        /* Navbar */
+        .navbar {
+            background: #ffffff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            padding: 0.8rem 0;
+        }
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.7rem;
+            color: #e67e22 !important;
+        }
+        .navbar-brand span {
+            color: #2c3e50;
+        }
+        .nav-link {
+            font-weight: 600;
+            color: #2c3e50 !important;
+            margin: 0 0.5rem;
+            transition: 0.3s;
+        }
+        .nav-link:hover {
+            color: #e67e22 !important;
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .btn-order {
+            background: #25d366;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            border: none;
+        }
+        .btn-order:hover {
+            background: #20b859;
+            transform: scale(1.05);
+            color: white;
+        }
+        .btn-menu {
+            background: #e67e22;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .btn-menu:hover {
+            background: #d35400;
+            color: white;
+        }
+        /* Section titles */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #e67e22;
+            margin: 10px auto;
+        }
+        /* Menu cards */
+        .menu-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+        }
+        .menu-card:hover {
+            transform: translateY(-8px);
+        }
+        .menu-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .menu-body {
+            padding: 1.2rem;
+        }
+        .menu-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .menu-price {
+            color: #e67e22;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        /* About & Contact */
+        .info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        .contact-form input, .contact-form textarea {
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            z-index: 1000;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+        footer {
+            background: #1e2a36;
+            color: #ccc;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Rashmy's <span>Food</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Welcome to Rashmy's Food</h1>
+            <p>Authentic Zambian & International Cuisine • Fresh • Tasty • Delivered to your door</p>
+            <a href="https://wa.me/260964173406?text=Hello%20Rashmy%27s%20Food%2C%20I%20want%20to%20place%20an%20order%21" class="btn btn-order me-2" target="_blank"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+            <a href="#menu" class="btn btn-menu">View Menu</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Our Signature Dishes</h2>
+            <div class="row">
+                <!-- Menu Item 1 -->
+                <div class="col-md-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=580&q=80" class="menu-img" alt="Grilled Chicken">
+                        <div class="menu-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="menu-title">Grilled Peri-Peri Chicken</h5>
+                                <span class="menu-price">K85</span>
+                            </div>
+                            <p class="text-muted small">Spicy grilled chicken served with nshima or chips.</p>
+                            <a href="https://wa.me/260964173406?text=I'd%20like%20to%20order%20Grilled%20Peri-Peri%20Chicken" class="btn btn-sm btn-outline-success">Order via WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Menu Item 2 -->
+                <div class="col-md-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=580&q=80" class="menu-img" alt="Beef Burger">
+                        <div class="menu-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="menu-title">Classic Beef Burger</h5>
+                                <span class="menu-price">K70</span>
+                            </div>
+                            <p class="text-muted small">100% beef patty, cheese, lettuce, tomato, and special sauce.</p>
+                            <a href="https://wa.me/260964173406?text=I'd%20like%20to%20order%20Classic%20Beef%20Burger" class="btn btn-sm btn-outline-success">Order via WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Menu Item 3 -->
+                <div class="col-md-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=580&q=80" class="menu-img" alt="Vegetarian Pizza">
+                        <div class="menu-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="menu-title">Vegetarian Pizza</h5>
+                                <span class="menu-price">K95</span>
+                            </div>
+                            <p class="text-muted small">Mushrooms, bell peppers, olives, mozzarella.</p>
+                            <a href="https://wa.me/260964173406?text=I'd%20like%20to%20order%20Vegetarian%20Pizza" class="btn btn-sm btn-outline-success">Order via WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Menu Item 4 -->
+                <div class="col-md-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1585109649139-3667c35e2b1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=580&q=80" class="menu-img" alt="Fish & Chips">
+                        <div class="menu-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="menu-title">Fish & Chips</h5>
+                                <span class="menu-price">K80</span>
+                            </div>
+                            <p class="text-muted small">Fresh tilapia fillet, crispy fries, tartar sauce.</p>
+                            <a href="https://wa.me/260964173406?text=I'd%20like%20to%20order%20Fish%20%26%20Chips" class="btn btn-sm btn-outline-success">Order via WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Menu Item 5 -->
+                <div class="col-md-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?ixlib=rb-4.0.3&auto=format&fit=crop&w=580&q=80" class="menu-img" alt="Nshima with Kapenta">
+                        <div class="menu-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="menu-title">Nshima with Kapenta</h5>
+                                <span class="menu-price">K60</span>
+                            </div>
+                            <p class="text-muted small">Traditional Zambian meal – nshima, dried kapenta, and vegetables.</p>
+                            <a href="https://wa.me/260964173406?text=I'd%20like%20to%20order%20Nshima%20with%20Kapenta" class="btn btn-sm btn-outline-success">Order via WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Menu Item 6 -->
+                <div class="col-md-4">
+                    <div class="menu-card">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=580&q=80" class="menu-img" alt="Chocolate Cake">
+                        <div class="menu-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="menu-title">Chocolate Lava Cake</h5>
+                                <span class="menu-price">K45</span>
+                            </div>
+                            <p class="text-muted small">Warm chocolate cake with molten center, served with ice cream.</p>
+                            <a href="https://wa.me/260964173406?text=I'd%20like%20to%20order%20Chocolate%20Lava%20Cake" class="btn btn-sm btn-outline-success">Order via WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="info-card">
+                        <i class="fas fa-utensils fa-3x" style="color:#e67e22;"></i>
+                        <h3 class="mt-3">About Rashmy's Food</h3>
+                        <p>Rashmy's Food started as a small family kitchen in Lusaka, serving authentic homemade meals. Today, we are a beloved local spot known for our warm hospitality, fresh ingredients, and fusion of Zambian and international flavors.</p>
+                        <p>We offer dine-in, takeaway, and free delivery within Lusaka for orders above K150. Our mission is to make every meal feel like home.</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> 14 Great East Road, Lusaka (near Arcades)</p>
+                        <p><i class="fas fa-clock"></i> <strong>Hours:</strong> Mon-Sun 11am – 10pm</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" class="img-fluid rounded-4 shadow" alt="Restaurant interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <h4><i class="fab fa-whatsapp text-success"></i> Order via WhatsApp</h4>
+                        <p>Click the button below to send us a message. We'll confirm your order and delivery time.</p>
+                        <a href="https://wa.me/260964173406?text=Hello%20Rashmy%27s%20Food%2C%20I%20want%20to%20place%20an%20order" class="btn btn-order" target="_blank"><i class="fab fa-whatsapp"></i> Order Now</a>
+                        <hr>
+                        <p><i class="fas fa-phone-alt"></i> <strong>Call us:</strong> <a href="tel:+260964173406">+260 964 173406</a></p>
+                        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> rashmysfood@example.com</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <h4><i class="fas fa-map-marked-alt"></i> Find Us</h4>
+                        <div class="ratio ratio-16x9 mt-3">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.508213473845!2d28.322817!3d-15.387526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1940f2f5b0c4a2b3%3A0x3b4c5d6e7f8a9b0c!2sLusaka%2C%20Zambia!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2025 Rashmy's Food. All rights reserved. | Designed by Moyo Web & AI Solutions</p>
+            <p><i class="fas fa-heart text-danger"></i> Serving Lusaka with love</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/260964173406?text=Hello%20Rashmy%27s%20Food%2C%20I%20want%20to%20place%20an%20order" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
