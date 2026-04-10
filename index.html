@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Rashmy's Food | Shawarma, Cakes & Chapati | Lusaka</title>
     <meta name="description" content="Rashmy's Food – Best shawarma, fresh cakes, and soft chapati in Lusaka. Order online via WhatsApp. Fast delivery.">
-    <meta name="keywords" content="Rashmy's Food, shawarma Lusaka, cakes Lusaka, chapati, order food online, restaurant Lusaka">
-    <meta name="author" content="Moyo Web & AI Solutions">
-    <meta property="og:title" content="Rashmy's Food – Shawarma, Cakes & Chapati">
-    <meta property="og:description" content="Authentic shawarma, homemade cakes, and soft chapati. Order via WhatsApp.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
@@ -16,54 +12,34 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: #fffaf5; scroll-padding-top: 80px; }
         .navbar { background: rgba(255,255,255,0.98); backdrop-filter: blur(8px); box-shadow: 0 2px 15px rgba(0,0,0,0.05); padding: 0.8rem 0; }
-        /* Wider brand name with space between words */
-        .navbar-brand { 
-            font-weight: 800; 
-            font-size: 1.8rem; 
-            background: linear-gradient(135deg, #e67e22, #d35400); 
-            -webkit-background-clip: text; 
-            background-clip: text; 
-            color: transparent;
-            letter-spacing: 1.5px;
-            word-spacing: 6px;
-        }
-        .navbar-brand span { 
-            background: none; 
-            color: #2c3e50;
-            letter-spacing: inherit;
-        }
+        .navbar-brand { font-weight: 800; font-size: 1.8rem; background: linear-gradient(135deg, #e67e22, #d35400); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: 1.5px; word-spacing: 6px; }
+        .navbar-brand span { background: none; color: #2c3e50; letter-spacing: inherit; }
         .nav-link { font-weight: 600; color: #2c3e50 !important; margin: 0 0.5rem; transition: 0.3s; }
         .nav-link:hover { color: #e67e22 !important; transform: translateY(-2px); }
-        .hero { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80'); background-size: cover; background-position: center; min-height: 90vh; display: flex; align-items: center; color: white; text-align: center; }
-        .hero h1 { font-size: 3.2rem; font-weight: 800; margin-bottom: 1rem; animation: fadeInUp 0.8s ease; letter-spacing: 1px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 2rem; animation: fadeInUp 1s ease; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); background-size: cover; background-position: center; min-height: 90vh; display: flex; align-items: center; color: white; text-align: center; }
+        .hero h1 { font-size: 3.2rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: 1px; }
         .btn-whatsapp { background: #25D366; color: white; border-radius: 50px; padding: 12px 28px; font-weight: 600; transition: 0.3s; border: none; }
-        .btn-whatsapp:hover { background: #128C7E; transform: scale(1.05); color: white; }
-        .btn-outline-light:hover { background: #e67e22; border-color: #e67e22; }
+        .btn-whatsapp:hover { background: #128C7E; transform: scale(1.05); }
         .section-title { font-size: 2.2rem; font-weight: 700; color: #2c3e50; margin-bottom: 2rem; text-align: center; position: relative; }
         .section-title:after { content: ''; display: block; width: 70px; height: 3px; background: #e67e22; margin: 12px auto 0; border-radius: 3px; }
         .menu-card { background: white; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: 0.3s; height: 100%; border: 1px solid #f0e6df; }
-        .menu-card:hover { transform: translateY(-8px); border-color: #e67e22; box-shadow: 0 20px 35px rgba(0,0,0,0.1); }
-        .menu-img { height: 220px; object-fit: cover; width: 100%; }
+        .menu-card:hover { transform: translateY(-8px); border-color: #e67e22; }
+        .menu-img { height: 220px; object-fit: cover; width: 100%; background-color: #f0e6df; }
         .menu-body { padding: 1.25rem; }
         .menu-title { font-weight: 800; font-size: 1.2rem; }
         .menu-price { color: #e67e22; font-weight: 700; font-size: 1.2rem; }
-        .info-card { background: white; border-radius: 24px; padding: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.05); height: 100%; transition: 0.3s; }
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; transition: 0.3s; }
-        .whatsapp-float:hover { transform: scale(1.1); background: #128C7E; color: white; }
+        .info-card { background: white; border-radius: 24px; padding: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.05); height: 100%; }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; z-index: 1000; transition: 0.3s; }
+        .whatsapp-float:hover { transform: scale(1.1); background: #128C7E; }
         footer { background: #1e2a36; color: #cfd8dc; }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .section-title { font-size: 1.8rem; } .navbar-brand { font-size: 1.4rem; letter-spacing: 1px; word-spacing: 4px; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .navbar-brand { font-size: 1.4rem; letter-spacing: 1px; word-spacing: 4px; } }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Rashmy's <span>Food</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarMain">
@@ -81,10 +57,7 @@
         <div class="container">
             <h1>Rashmy's Food</h1>
             <p class="lead">Authentic Shawarma • Fresh Cakes • Soft Chapati</p>
-            <div class="d-flex flex-wrap justify-content-center gap-3">
-                <a href="https://wa.me/260964173406?text=Hello%20Rashmy's%20Food%2C%20I'd%20like%20to%20order" target="_blank" class="btn btn-whatsapp btn-lg"><i class="fab fa-whatsapp me-2"></i>Order on WhatsApp</a>
-                <a href="#menu" class="btn btn-outline-light btn-lg">View Menu</a>
-            </div>
+            <a href="https://wa.me/260964173406?text=Hello%20Rashmy's%20Food%2C%20I'd%20like%20to%20order" target="_blank" class="btn btn-whatsapp btn-lg"><i class="fab fa-whatsapp me-2"></i>Order on WhatsApp</a>
         </div>
     </section>
 
@@ -95,7 +68,7 @@
                 <!-- Chicken Shawarma -->
                 <div class="col-md-6 col-lg-4">
                     <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1561651823-34feb02250e4?w=600&h=400&fit=crop" class="menu-img" alt="Chicken Shawarma">
+                        <img src="https://images.pexels.com/photos/27398304/pexels-photo-27398304.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" class="menu-img" alt="Chicken Shawarma" loading="lazy">
                         <div class="menu-body">
                             <div class="d-flex justify-content-between">
                                 <h5 class="menu-title">Chicken Shawarma</h5>
@@ -109,7 +82,7 @@
                 <!-- Beef Shawarma -->
                 <div class="col-md-6 col-lg-4">
                     <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&h=400&fit=crop" class="menu-img" alt="Beef Shawarma">
+                        <img src="https://images.pexels.com/photos/27424293/pexels-photo-27424293.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" class="menu-img" alt="Beef Shawarma" loading="lazy">
                         <div class="menu-body">
                             <div class="d-flex justify-content-between">
                                 <h5 class="menu-title">Beef Shawarma</h5>
@@ -123,7 +96,7 @@
                 <!-- Soft Chapati -->
                 <div class="col-md-6 col-lg-4">
                     <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1616795257582-d1d72b9c41c5?w=600&h=400&fit=crop" class="menu-img" alt="Soft Chapati">
+                        <img src="https://images.pexels.com/photos/6133559/pexels-photo-6133559.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" class="menu-img" alt="Soft Chapati" loading="lazy">
                         <div class="menu-body">
                             <div class="d-flex justify-content-between">
                                 <h5 class="menu-title">Soft Chapati</h5>
@@ -137,7 +110,7 @@
                 <!-- Chocolate Cake -->
                 <div class="col-md-6 col-lg-4">
                     <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9586?w=600&h=400&fit=crop" class="menu-img" alt="Chocolate Cake">
+                        <img src="https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" class="menu-img" alt="Chocolate Cake" loading="lazy">
                         <div class="menu-body">
                             <div class="d-flex justify-content-between">
                                 <h5 class="menu-title">Chocolate Cake</h5>
@@ -151,7 +124,7 @@
                 <!-- Vanilla Cake -->
                 <div class="col-md-6 col-lg-4">
                     <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1587661826281-ef57f6b60dba?w=600&h=400&fit=crop" class="menu-img" alt="Vanilla Cake">
+                        <img src="https://images.pexels.com/photos/1126240/pexels-photo-1126240.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" class="menu-img" alt="Vanilla Cake" loading="lazy">
                         <div class="menu-body">
                             <div class="d-flex justify-content-between">
                                 <h5 class="menu-title">Vanilla Cake</h5>
@@ -162,10 +135,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- Chapati Wrap (Shawarma Style) -->
+                <!-- Chapati Wrap -->
                 <div class="col-md-6 col-lg-4">
                     <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&h=400&fit=crop" class="menu-img" alt="Chapati Wrap">
+                        <img src="https://images.pexels.com/photos/27424297/pexels-photo-27424297.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" class="menu-img" alt="Chapati Wrap" loading="lazy">
                         <div class="menu-body">
                             <div class="d-flex justify-content-between">
                                 <h5 class="menu-title">Chapati Wrap (Shawarma Style)</h5>
@@ -177,9 +150,6 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-4">
-                <a href="https://wa.me/260964173406?text=Hello%20Rashmy's%20Food%2C%20I%20want%20to%20see%20the%20full%20menu" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp me-2"></i>Order Any Item on WhatsApp</a>
-            </div>
         </div>
     </section>
 
@@ -190,14 +160,14 @@
                     <div class="info-card">
                         <i class="fas fa-utensils fa-3x text-warning mb-3"></i>
                         <h3>About Rashmy's Food</h3>
-                        <p>We specialize in <strong>shawarma, fresh cakes, and soft chapati</strong> – made with love daily. Our shawarma is marinated for hours, cakes are baked fresh, and chapati is rolled by hand. Whether you crave a quick wrap or a sweet treat, we deliver across Lusaka.</p>
+                        <p>We specialize in <strong>shawarma, fresh cakes, and soft chapati</strong> – made with love daily. Our shawarma is marinated for hours, cakes are baked fresh, and chapati is rolled by hand. We deliver across Lusaka.</p>
                         <p><i class="fas fa-map-marker-alt text-warning"></i> <strong>Location:</strong> 14 Great East Road, Lusaka</p>
                         <p><i class="fas fa-clock text-warning"></i> <strong>Hours:</strong> Mon–Sun 11am – 10pm</p>
                         <p><i class="fas fa-motorcycle text-warning"></i> <strong>Delivery:</strong> Free delivery above K150.</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&h=400&fit=crop" class="img-fluid rounded-4 shadow" alt="Rashmy's Food kitchen">
+                    <img src="https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" class="img-fluid rounded-4 shadow" alt="Kitchen" loading="lazy">
                 </div>
             </div>
         </div>
@@ -223,7 +193,6 @@
                         <div class="ratio ratio-16x9 mt-3 rounded overflow-hidden">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.508213473845!2d28.322817!3d-15.387526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1940f2f5b0c4a2b3%3A0x3b4c5d6e7f8a9b0c!2sLusaka%2C%20Zambia!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
                         </div>
-                        <p class="mt-2 small text-muted">Visit us at 14 Great East Road, Lusaka.</p>
                     </div>
                 </div>
             </div>
@@ -232,14 +201,12 @@
 
     <footer class="text-center py-4">
         <div class="container">
-            <p>&copy; 2025 Rashmy's Food. All rights reserved. | Powered by <a href="https://moyoweb.pythonanywhere.com" class="text-warning">Moyo Web & AI Solutions</a></p>
-            <p class="small"><i class="fas fa-heart text-danger"></i> Serving Lusaka – Shawarma, Cakes & Chapati made fresh daily.</p>
+            <p>&copy; 2025 Rashmy's Food | Powered by <a href="#" class="text-warning">Moyo Web & AI Solutions</a></p>
+            <p class="small"><i class="fas fa-heart text-danger"></i> Shawarma, Cakes & Chapati – made fresh daily in Lusaka.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/260964173406?text=Hello%20Rashmy's%20Food%2C%20I'd%20like%20to%20order" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/260964173406?text=Hello%20Rashmy's%20Food%2C%20I'd%20like%20to%20order" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
